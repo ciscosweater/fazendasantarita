@@ -4,7 +4,9 @@ import styles from '@/styles/Home.module.css';
 import InfoBlock from '@/components/block';
 import {useEffect, useState} from 'react';
 
-const BASE_URL = 'http://localhost:3000/api'
+const apiUrl = "http://localhost:3000/api"
+
+console.log(apiUrl)
 
 export default function Home() {
   const [diaAtual, setDiaAtual] = useState<number>();
@@ -15,7 +17,7 @@ export default function Home() {
   const year = today.getFullYear();
 
   async function carregarDia(dia: number, mes: number) {
-    const resp = await fetch(`${BASE_URL}/infodias/${mes}/${dia}`);
+    const resp = await fetch(`${apiUrl}/infodias/${mes}/${dia}`);
     const json = await resp.json();
     setDiaAtual(json.info);
     console.log(`dia atual: ${json.info}`);
