@@ -18,10 +18,10 @@ export default function Home() {
   const diaPlantacao = new Date('2023-08-12')
 
   useEffect(() => {
-    const differenceInTime = today - diaPlantacao;
+    const differenceInTime = today.getTime() - diaPlantacao.getTime();
     const days = Math.floor(differenceInTime / (1000 * 3600 * 24));
     setDiasPassados(days);
-  }, [diaPlantacao]);
+  }, [diaPlantacao, today]);
 
   async function carregarDia(dia: number, mes: number) {
     const resp = await fetch(`${apiUrl}/infodias/${mes}/${dia}`);
