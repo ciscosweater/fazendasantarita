@@ -8,11 +8,20 @@ const apiUrl = "http://localhost:3000/api"
 
 export default function Home() {
   const [diaAtual, setDiaAtual] = useState<number>();
+  const [diasPassados, setDiasPassados] = useState<number>();
 
   const today = new Date();
   const day = today.getDate();
   const month = today.getMonth() + 1;
   const year = today.getFullYear();
+
+  const diaPlantacao = new Date('2023-08-12')
+
+  useEffect(() => {
+    const differenceInTime = today - diaPlantacao;
+    const days = Math.floor(differenceInTime / (1000 * 3600 * 24));
+    setDiasPassados(days);
+  }, [diaPlantacao]);
 
   async function carregarDia(dia: number, mes: number) {
     const resp = await fetch(`${apiUrl}/infodias/${mes}/${dia}`);
@@ -22,14 +31,14 @@ export default function Home() {
   }  
 
   useEffect(() => {
-    carregarDia(15, month)
-  }, [day])
+    carregarDia(day, month)
+  }, [day, month])
 
   function renderizarDia(dia: any) {
     if (dia.length > 0) {
     return (
       dia.map((item: any) => (
-        <InfoBlock group={item.group} title={item.title} amount={item.amount} />
+        <InfoBlock key={item.key} group={item.group} title={item.title} amount={item.amount} />
       ))
     );
     }
@@ -50,6 +59,7 @@ export default function Home() {
         <div className={styles.blocksDiv}>
           {diaAtual && renderizarDia(diaAtual)}
         </div>
+        <span className={styles.counterText}>Dias passados após a plantação: {diasPassados} dias</span>
       </div>
     </>
   )
