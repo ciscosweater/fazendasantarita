@@ -22,22 +22,22 @@ const diasFertirrigacao: any = [
                 amount: 5
               },
               {
-                group: 0,
+                group: 1,
                 title: "MAP",
                 amount: 5
               },
               {
-                group: 0,
+                group: 2,
                 title:"Sulfato de Potássio",
                 amount: 5
               },
               {
-                group: 1,
+                group: 3,
                 title: "Teste",
                 amount: 10
               },
               {
-                group: 2,
+                group: 4,
                 title: "Teste",
                 amount: 10
               }

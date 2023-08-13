@@ -5,6 +5,7 @@ import InfoBlock from '@/components/block';
 import {useEffect, useState} from 'react';
 
 const apiUrl = "https://fazendasantarita.vercel.app/api/"
+// const apiUrl = "http://localhost:3000/api"
 
 export default function Home() {
   const [diaAtual, setDiaAtual] = useState<number>();
@@ -60,6 +61,7 @@ export default function Home() {
           {diaAtual && renderizarDia(diaAtual)}
         </div>
         <span className={styles.counterText}>Dias passados após a plantação: {diasPassados} dias</span>
+        <span className={styles.warning}>Cores diferentes não podem ser misturadas!</span>
       </div>
     </>
   )

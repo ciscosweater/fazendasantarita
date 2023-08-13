@@ -10,6 +10,12 @@ export default function InfoBlock(props: InfoBlockProps) {
 
     const groupColors = ["#33ccff", "#33cc33", "#9900cc", "#ffcc00", "#d3d3d3"]
 
+    // 0 - azul
+    // 1 - verde
+    // 2 - roxo
+    // 3 - amarelo
+    // 4 - cinza
+
     function renderAmount() {
         if (props.amount > 0) {
             return (
