@@ -4,7 +4,7 @@ import styles from '@/styles/Home.module.css';
 import InfoBlock from '@/components/block';
 import {useEffect, useState} from 'react';
 
-const apiUrl = "http://localhost:3000/api"
+const apiUrl = "https://fazendasantarita.vercel.app/api/"
 
 export default function Home() {
   const [diaAtual, setDiaAtual] = useState<number>();
