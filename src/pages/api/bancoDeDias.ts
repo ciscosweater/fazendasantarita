@@ -16,7 +16,7 @@ const diasFertirrigacao: any = [
         info: [
             {
                 group: 4,
-                title: "Nada hoje.",
+                title: "Teste",
                 amount: 0
             }
         ]

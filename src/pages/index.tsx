@@ -6,14 +6,12 @@ import {useEffect, useState} from 'react';
 
 const apiUrl = "http://localhost:3000/api"
 
-console.log(apiUrl)
-
 export default function Home() {
   const [diaAtual, setDiaAtual] = useState<number>();
 
   const today = new Date();
   const day = today.getDate();
-  const month = today.getMonth() + 1; // Os meses são baseados em zero
+  const month = today.getMonth() + 1;
   const year = today.getFullYear();
 
   async function carregarDia(dia: number, mes: number) {
@@ -24,7 +22,7 @@ export default function Home() {
   }  
 
   useEffect(() => {
-    carregarDia(day, month)
+    carregarDia(15, month)
   }, [day])
 
   function renderizarDia(dia: any) {
