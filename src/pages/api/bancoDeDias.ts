@@ -157,6 +157,28 @@ const diasFertirrigacao: any = [
             }
         ]
     },
+    {
+      key: 8,
+      dia: 21,
+      mes: 8,
+      info: [
+        {
+            group: 0,
+            title: "Nitrato de Amônio",
+            amount: 5
+          },
+          {
+            group: 0,
+            title: "MAP",
+            amount: 5
+          },
+          {
+            group: 0,
+            title:"Sulfato de Potássio",
+            amount: 5
+          }
+    ]
+  },
 ]
 
 export default diasFertirrigacao;
