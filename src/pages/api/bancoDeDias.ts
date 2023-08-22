@@ -158,7 +158,7 @@ const diasFertirrigacao: any = [
         ]
     },
     {
-      key: 8,
+      key: 9,
       dia: 21,
       mes: 8,
       info: [
@@ -179,6 +179,23 @@ const diasFertirrigacao: any = [
           }
     ]
   },
+  {
+    key: 10,
+    dia: 22,
+    mes: 8,
+    info: [
+      {
+          group: 1,
+          title: "Nitrato de Cálcio",
+          amount: 5
+        },
+        {
+          group: 3,
+          title: "Ácido Bórico",
+          amount: 1
+        }
+    ]
+},
 ]
 
 export default diasFertirrigacao;
